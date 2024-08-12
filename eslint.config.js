@@ -1,4 +1,3 @@
-import globals from "globals";
 import js from "@eslint/js";
 
 export default [
@@ -7,11 +6,6 @@ export default [
     name: 'configuration',
     files: ['**/*.js'],
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.jest,
-        ...globals.node
-      },
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {

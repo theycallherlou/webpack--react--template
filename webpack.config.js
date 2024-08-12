@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: '[name]-[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -58,7 +58,9 @@ export default {
   plugins: [
     new ESLintWebpackPlugin({ 
       extensions: ['js', 'jsx'],
-      type: 'flat'
+      configType: 'flat',
+      eslintPath: 'eslint/use-at-your-own-risk',
+
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
